@@ -1,0 +1,56 @@
+<div class="maindiv">
+    <mat-card>
+        <form>
+            <table class="inputs" cellspacing="0">
+                <tr>
+                    <td>
+                        <mat-form-field class="inputs">
+                            <input matInput placeholder="Número de Bodega" disabled value="XX" autocomplete="nope">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="inputs">
+                            <input matInput placeholder="Código de acuerdo" disabled value="#############" autocomplete="nope">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <mat-form-field class="inputs">
+                            <input matInput placeholder="Nombre del Tenedor" disabled value="XXXXX XXXXXXX XXXXXX XXXXXX " autocomplete="nope">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <mat-form-field class="inputs">
+                            <input matInput placeholder="Nombre del Perito" autocomplete="nope" #_peritoName required>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <mat-form-field class="inputs">
+                            <input matInput placeholder="Nombre del representante del Tenedor" #_repHolder autocomplete="nope">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <mat-form-field class="inputs">
+                            <input matInput placeholder="Cantidad Peritada" autocomplete="nope" #_quantity required>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <mat-form-field class="inputs">
+                            <textarea matInput placeholder="Observaciones" matTextareaAutosize matAutosizeMinRows="5" autocomplete="nope" #_observation></textarea>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+            <a class="buttonX" mat-raised-button>Continuar</a>
+        </form>
+    </mat-card>
+</div>

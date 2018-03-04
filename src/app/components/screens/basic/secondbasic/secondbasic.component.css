@@ -1,0 +1,29 @@
+.maindiv {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.inputs {
+    min-width: 50%;
+    max-width: 80%;
+    width: 100%;
+}
+
+.buttonX {
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: indigo;
+    border-radius: 6px;
+    border: 2px solid #310153;
+}
+
+.buttonX:hover {
+    color: #4b0082;
+    background-color: #ffffff;
+    cursor: pointer;
+}

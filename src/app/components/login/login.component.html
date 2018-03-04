@@ -1,0 +1,27 @@
+<div>
+    <mat-card>
+        <form class="loginform">
+
+            <h2>Inicio de sesión</h2>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Código" #_username autocomplete="given-name" required/>
+            </mat-form-field>
+
+
+
+            <mat-form-field class="full-width">
+                <input type="password" matInput placeholder="Contraseña" #_password autocomplete="off" required/>
+            </mat-form-field>
+            <div class="full-width" align="center">
+                <re-captcha (resolved)="resolved($event)" siteKey="6Le-4UcUAAAAADQ2DztoiS80loIZEnMFKidO5noT"></re-captcha>
+            </div>
+
+            <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+            <div *ngIf="error" class="error">{{error}}</div>
+            <br>
+            <button [disabled]="false" (click)="login(_username.value, _password.value)" mat-raised-button color="primary">Entrar</button>
+
+        </form>
+    </mat-card>
+</div>
