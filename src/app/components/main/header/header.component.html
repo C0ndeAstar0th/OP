@@ -1,15 +1,16 @@
 <header class="header">
-    <mat-toolbar class="toolbar" color="primary">
+    <mat-toolbar class="toolbar" style="background-color:indigo; color: white">
         <span>
-        <strong> Veedor:</strong> {{infoUser.name}} {{infoUser.surname}}
+        <strong> {{kind}}:</strong> {{infoUser.name}} {{infoUser.surname}}
     </span>
         <span class="demo-fill-remaining"></span>
         <span>
         <strong>Código:</strong> {{infoUser.username}}
     </span>
         <span class="demo-fill-remaining"></span>
+        <button mat-ico-button (click)="logout()"><mat-icon svgIcon="exit"></mat-icon></button>
 
-        <a class="buttonX" md-raised-button (click)="logout() ">Cerrar sesión</a>
-
+        <!--<a class=" buttonX " md-raised-button (click)="logout() ">Cerrar sesión</a>
+        -->
     </mat-toolbar>
 </header>

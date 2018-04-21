@@ -7,7 +7,7 @@
 
 .inputs {
     min-width: 50%;
-    max-width: 80%;
+    max-width: 65%;
     width: 100%;
 }
 
@@ -26,4 +26,14 @@
     color: #4b0082;
     background-color: #ffffff;
     cursor: pointer;
+}
+
+.error {
+    text-decoration-color: red;
+    background-color: plum;
+    color: red;
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 6px;
+    border: 0.5px solid red;
 }

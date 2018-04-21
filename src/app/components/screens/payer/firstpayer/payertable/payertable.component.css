@@ -1,0 +1,56 @@
+        .maindiv {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            width: 80%;
+            height: 90%;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+        
+        .table {
+            overflow: auto;
+            max-height: 500px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        .search {
+            min-height: 64px;
+            padding: 8px 24px 0;
+        }
+        
+        .mat-form-field {
+            font-size: 14px;
+            width: 100%;
+        }
+        
+        .header {
+            display: flex;
+            cursor: pointer;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.37);
+            align-items: right;
+        }
+        
+        mat-row {
+            padding: 0px 1px;
+            font-size: 50px;
+            text-align: left;
+            height: 25px;
+        }
+        
+        mat-row:nth-child(odd) {
+            background-color: rgba(76, 0, 130, 0.281);
+        }
+        
+        mat-row:hover {
+            background-color: rgba(76, 0, 130, 0.555);
+        }
+        
+        container {
+            display: flex;
+            flex-direction: column;
+            min-width: 300px;
+        }

@@ -1,0 +1,10 @@
+.maindiv {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 80%;
+    height: 90%;
+    padding-left: 10%;
+    padding-right: 10%;
+}

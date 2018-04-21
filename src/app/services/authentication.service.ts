@@ -9,21 +9,22 @@ import { Session } from 'protractor';
 
 @Injectable()
 export class AuthenticationService {
-  private apiUrl = 'http://op.asproinco.com/nginicio.php';
+  private apiUrl = 'http://appslim/api/auth';
+
   constructor(private http: Http) { }
 
-  login(user: User): Observable<Session> {
+  login(user: User): Observable <Session> {
     const headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    const options = new RequestOptions({'headers': headers});
-  return  this.http.post(this.apiUrl, {username: user.username,
-          password: user.password}, {headers: headers})
+    const options = new RequestOptions({headers: headers});
+  return  this.http.post(this.apiUrl, {'username': user.username,
+          'password': user.password}, {headers: headers})
           .map(this.getDatos);
   }
 
   getDatos(data: Response) {
-    const datos = data.json();
-    return datos;
+     const datos = data.json();
+     return datos;
   }
 
 }

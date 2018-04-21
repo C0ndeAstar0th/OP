@@ -1,11 +1,18 @@
 <div class="maindiv">
     <mat-card>
         <h2>Bodega a peritar número:</h2>
-        <a class="changeButton">Cambiar bodega</a>
+        <a>Cambiar Bodega</a>
+        <mat-select placeholder="Cambiar Bodega" [(ngModel)]="selected">
+            <mat-option *ngFor="let bodega of fullbodegas" #_select [value]="bodega">
+                {{bodega}}
+            </mat-option>
+        </mat-select>
+        <a class="holdNumber">
+            {{selected}}
+        </a>
         <br>
-        <a class="holdNumber">XX</a>
-
-        <br>
-        <a class="buttonX">Continuar</a>
+        <a class="buttonX" (click)="next(_select)" mat-raised-button color="primary">
+            Continuar
+        </a>
     </mat-card>
 </div>

@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     this._as.login(this.model).subscribe(
       result => {
         // tslint:disable-next-line:triple-equals
-        if (result['infoUser']['id']) {
+        if (result['id'] != 0) {
            this.correctLogin(result);
         } else {
           this.wrongTry(result);
@@ -71,7 +71,11 @@ export class LoginComponent implements OnInit {
 
   private correctLogin(data) {
     this._ss.setCurrentSession(data);
+    if (this._ss.getCurrentUser().type === '3') {
+      this._ss.setFlow(1);
+    }
     this.router.navigate(['/home']);
   }
-  }
+
+}
 

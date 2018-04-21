@@ -11,7 +11,6 @@ export class Guard2 implements CanActivate {
             ) { }
 
     canActivate() {
-        console.log(this._ss.isAuthenticated());
            if (this._ss.isAuthenticated()) {
                this.router.navigate(['/home']);
         }

@@ -12,22 +12,34 @@ import { MatInputModule, MatButtonModule,
         MatProgressBarModule,
         MatGridListModule,
         MatToolbarModule,
-        MatTableModule} from '@angular/material';
+        MatTableModule,
+        MatSelectModule,
+        MatTabsModule,
+        MatIconModule,
+        MatPaginatorModule,
+        MatCheckboxModule,
+        MatSortModule} from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
+import { AuthenticationService } from './services/authentication.service';
+import { StorageService } from './services/storage.service';
+import { Guard } from './guard/guard';
+import { Guard2 } from './guard/guard2';
+import { BaseService } from './services/base.service';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { Routing } from './app.routes';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
-import { AuthenticationService } from './services/authentication.service';
-import { StorageService } from './services/storage.service';
-import { Guard } from './guard/guard';
-import { Guard2 } from './guard/guard2';
 import { HeaderComponent } from './components/main/header/header.component';
 import { FirstbasicComponent } from './components/screens/basic/firstbasic/firstbasic.component';
-import { SecondbasicComponent } from './components/screens/basic/secondbasic/secondbasic.component';
+import { SecondbasicComponent, DialogContent, DialogConfirm } from './components/screens/basic/secondbasic/secondbasic.component';
 import { FinalbasicComponent } from './components/screens/basic/finalbasic/finalbasic.component';
+import { FirstpayerComponent } from './components/screens/payer/firstpayer/firstpayer.component';
+import { PayertableComponent } from './components/screens/payer/firstpayer/payertable/payertable.component';
+import { TablesService } from './services/tables.service';
 
 
 
@@ -42,6 +54,10 @@ import { FinalbasicComponent } from './components/screens/basic/finalbasic/final
     FirstbasicComponent,
     SecondbasicComponent,
     FinalbasicComponent,
+    DialogContent,
+    DialogConfirm,
+    FirstpayerComponent,
+    PayertableComponent
    ],
   imports: [
     BrowserModule,
@@ -58,15 +74,30 @@ import { FinalbasicComponent } from './components/screens/basic/finalbasic/final
     MatGridListModule,
     MatToolbarModule,
     MatTableModule,
+    MatSelectModule,
+    MatTabsModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatCheckboxModule,
+    MatSortModule,
     CalendarModule.forRoot(),
     RecaptchaModule.forRoot(),
     Routing,
+    MatDialogModule,
+    PdfViewerModule,
   ],
-  providers: [AuthenticationService,
+  providers: [
+    AuthenticationService,
     StorageService,
+    BaseService,
+    TablesService,
     Guard,
     Guard2,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DialogContent,
+    DialogConfirm
+  ]
 })
 export class AppModule { }

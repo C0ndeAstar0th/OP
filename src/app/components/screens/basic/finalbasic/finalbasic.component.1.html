@@ -1,0 +1,52 @@
+<div *ngIf="!datos">
+    <br>
+    <br>
+    <br>
+    <h3>Por favor espere mientras se carga la información.</h3>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="maindiv" *ngIf="datos">
+    <mat-card>
+        <br>
+        <br>
+        <p><strong>CIUDAD: </strong> _____________ <strong>FECHA: </strong> _______________
+            <strong>HORA INICIO:</strong> __________ <br>
+            <div style="text-align: right"><strong>HORA SALIDA:</strong> _________ <br> </div>
+
+            <p>
+                <br><br><br><br><br>
+                <strong>NOMBRE TENEDOR: </strong>________________________________________________ <br>
+                <strong>NOMBRE PAGADOR: </strong>________________________________________________ <br>
+                <strong>NOMBRE REPRESENTANTE TENEDOR: </strong>________________________________ <br>
+                <strong>NOMBRE VEEDOR: </strong> _________________________________________________<br>
+                <strong>BODEGA NÚMERO: </strong> _________________________________________________<br>
+                <strong>CANTIDAD DE CAJAS EN BODEGA: </strong> ___________________________________<br>
+                <strong>CANTIDAD PERITADA: </strong>______________________________________________ <br>
+
+                <br><br>
+                <strong>OBSERVACIONES: </strong>_________________________________________________
+                <br> __________________________________________________________________
+                <br> __________________________________________________________________
+                <br> __________________________________________________________________
+                <br> __________________________________________________________________
+                <br>
+            </p>
+            <p>
+                <br><br><br><br><br> ___________________&emsp;&emsp; ___________________&emsp;&emsp; ___________________
+                <br>
+                <strong>VEEDOR</strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <strong>TENEDOR O</strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <strong>PERITO</strong> <br>&emsp;<strong>REPRESENTANTE</strong>
+                <br> <span style="font-size: 12px">
+                    NOMBRE:________________&emsp;&emsp;&emsp;&emsp;NOMBRE:________________&emsp;&emsp;&emsp;&emsp;NOMBRE:________________
+<br> C.C._____________________&emsp; &emsp;&emsp;&emsp;C.C.______________________ &emsp;&emsp;&emsp;C.C._____________________
+                </span>
+            </p>
+
+    </mat-card>
+</div>
+
+<input type="file" placeholder="Subir pdf" (change)="fileChangeEvent($event)">
+
+<button (click)=" generarPDF() ">PDF</button>
+<button (click)=" ver() ">atrás</button>

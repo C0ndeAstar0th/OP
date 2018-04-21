@@ -30,6 +30,8 @@
     "jspdf-autotable": "^2.3.2",
     "ng-pdf-make": "0.0.2",
     "ng-recaptcha": "^3.0.3",
+    "ng2-opd-popup": "^1.1.21",
+    "ng2-pdf-viewer": "^4.1.2",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },

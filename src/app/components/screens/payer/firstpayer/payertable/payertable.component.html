@@ -1,0 +1,48 @@
+<div class="search">
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar">
+    </mat-form-field>
+</div>
+<div class="container mat-elevation-z8">
+
+    <mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="id">
+            <mat-cell *matHeaderCellDef mat-sort-header class="header"> Bodega No </mat-cell>
+            <mat-cell *matCellDef="let bod" style="text-align: center;"> {{bod.id}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="user_id">
+            <mat-cell *matHeaderCellDef mat-sort-header class="header"> Veedor </mat-cell>
+            <mat-cell *matCellDef="let bod"> {{bod.user_id}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="done">
+            <mat-cell *matHeaderCellDef mat-sort-header class="header"> Estado </mat-cell>
+            <mat-cell *matCellDef="let bod "> {{bod.done}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="payed">
+            <mat-cell *matHeaderCellDef mat-sort-header class="header"> Pagado </mat-cell>
+            <mat-cell *matCellDef="let bod"> {{bod.payed}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="link">
+            <mat-cell *matHeaderCellDef mat-sort-header class="header"> Pagar </mat-cell>
+            <mat-cell *matCellDef="let bod">
+                <button mat-icon-button click="">
+                    <mat-icon svgIcon="pdfb" >
+                    </mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns "></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns; "></mat-row>
+    </mat-table>
+
+    <mat-paginator [pageSize]="10 " [pageSizeOptions]="[10, 20, 50, 100] " [showFirstLastButtons]="true ">
+
+    </mat-paginator>
+</div>
