@@ -36,9 +36,7 @@ export class FirstbasicComponent implements OnInit {
     this._ss.setFlow(2);
     this._bs.getInfoBodega(this.selected);
     this._bs.bodega = this.selected;
-    this._bs.setProcess(this.selected, this._ss.getCurrentUser().id)
-    .subscribe(result => console.log(result)
-    );
+    this._bs.setProcess(this.selected, this._ss.getCurrentUser().id);
     this.router.navigate(['/home2', this.selected]);
   }
 

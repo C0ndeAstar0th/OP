@@ -9,7 +9,7 @@ import { Session } from 'protractor';
 
 @Injectable()
 export class AuthenticationService {
-  private apiUrl = 'http://appslim/api/auth';
+  private apiUrl = 'http://op.asproinco.com/Slim/public/api/auth';
 
   constructor(private http: Http) { }
 

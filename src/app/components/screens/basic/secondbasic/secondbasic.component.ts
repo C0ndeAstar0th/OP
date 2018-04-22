@@ -159,7 +159,7 @@ export class DialogContent {
 
   constructor(
     public dialogRef: MatDialogRef<DialogContent>,
-    @Inject(MAT_DIALOG_DATA) public dato: number) { }
+    @Inject(MAT_DIALOG_DATA) public dato) { }
 
 }
 
@@ -181,6 +181,6 @@ export class DialogConfirm {
 
   constructor(
     public dialogRef: MatDialogRef<DialogConfirm>,
-    @Inject(MAT_DIALOG_DATA) public dato: number) { }
+    @Inject(MAT_DIALOG_DATA) public dato) { }
 
 }

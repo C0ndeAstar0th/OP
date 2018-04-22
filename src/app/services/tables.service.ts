@@ -9,6 +9,6 @@ export class TablesService {
   constructor(private _http: HttpClient) { }
 
   public getStatus(st: number): Observable<Bod[]> {
-    return this._http.get<Bod[]>('http://appslim/api/warehouse/status/' + st);
+    return this._http.get<Bod[]>('http://op.asproinco.com/Slim/public/api/warehouse/status/' + st);
   }
 }

@@ -178,7 +178,6 @@ export class FinalbasicComponent implements OnInit {
   fin() {
     this._ss.setFlow(1);
     this.router.navigate(['/home']);
-    this._bs.isDone(this.datos)
-    .subscribe(result => console.log(result));
+    this._bs.isDone(this.datos);
   }
 }
