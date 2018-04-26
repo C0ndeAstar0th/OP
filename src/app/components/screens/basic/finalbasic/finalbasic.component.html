@@ -5,16 +5,15 @@
     <h3>Por favor espere mientras se carga la información.</h3>
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </div>
-<div *ngIf="datos">
+<div *ngIf="datos" style="height:100%; width:100%; overflow: scroll">
     <mat-card>
-        <!--  <iframe id="output" width='100%' height='70%' src='#{pdfSrc}'></iframe>
         <pdf-viewer [src]="pdfSrc" fit-to-page="true" zoom="0.5" style="display: block;"></pdf-viewer>
-        -->
-        <iframe id="marco" width="100%" type="application/pdf" height="100%"></iframe>
+
+        <iframe id="marco" type="application/pdf" hidden></iframe>
 
     </mat-card>
 </div>
 <mat-card>
-    <button (click)=" fin() " Mat-raised-button color="primary"> Finalizar peritaje de la bodega {{datos['warehouse_id']}}</button>
-    <button (click)=" volver() " Mat-raised-button>volver</button>
+    <button *ngIf="datos" class="buttonX" (click)=" fin()" Mat-raised-button color="primary"> Finalizar peritaje de la bodega {{datos['warehouse_id']}}</button>
+    <button class="buttonX" (click)="volver()" Mat-raised-button>Corregir</button>
 </mat-card>

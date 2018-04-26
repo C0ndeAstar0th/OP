@@ -68,10 +68,10 @@ export class SecondbasicComponent implements OnInit {
     this.error = false;
     if (!form.perito) {
     this.error = true;
-    this.msgError = 'El Nombre del perito no puede estar vacío';
+    this.msgError = 'El Nombre del PERITO no puede estar vacío';
     } else if (!form.cantidadPeritada) {
       this.error = true;
-      this.msgError = 'Por favor ingrese la cantidad peritada';
+      this.msgError = 'Por favor ingrese la CANTIDAD peritada';
     } else {
       if (form.representante) {
         this.data['agent'] = form.representante;
@@ -105,7 +105,7 @@ export class SecondbasicComponent implements OnInit {
         this.openConfirm();
       } else {
         this.error = true;
-        this.msgError = `La cantidad peritada confirmada no concuerda
+        this.msgError = `La cantidad peritada confirmada NO concuerda
                           con la ingresada en el formulario`;
       }
     });
@@ -133,7 +133,7 @@ export class SecondbasicComponent implements OnInit {
              // }, 1500);
             } else {
               this.error = true;
-              this.msgError = `La contraseña ingresada no coincide con su usuario,
+              this.msgError = `La contraseña ingresada NO coincide con su usuario,
               por favor ingrese su contraseña`;
             }
           });
@@ -167,14 +167,16 @@ export class DialogContent {
   template: `<div mat-dialog-content class="maindiv">
   <p style= "color: #1baef8">Para continuar por favor digite de nuevo su <strong>contraseña</strong>.</p>
 
+  <form>
   <mat-form-field>
-    <input matInput type="password" [(ngModel)]="dato.pass" required>
-  </mat-form-field>
-
+    <input matInput type="password" [(ngModel)]="dato.pass" [ngModelOptions]="{standalone: true}" autocomplete="off" required>
+ </mat-form-field>
+    </form>
 </div>
 <div mat-dialog-actions style="text-align: center">
   &emsp;&emsp;&emsp;<button mat-button color="primary" [mat-dialog-close]="dato.pass" cdkFocusInitial>Continuar</button>
-</div>`,
+</div>
+`,
 })
 // tslint:disable-next-line:component-class-suffix
 export class DialogConfirm {

@@ -5,6 +5,10 @@
     padding: 10px;
 }
 
+.card {
+    width: 100%;
+}
+
 .inputs {
     min-width: 50%;
     max-width: 65%;
@@ -29,11 +33,15 @@
 }
 
 .error {
-    text-decoration-color: red;
-    background-color: plum;
-    color: red;
+    display: flex;
+    width: 70%;
     font-size: 18px;
-    padding: 15px;
+    padding: 15px 15px 15px 15px;
+    height: fit-content;
     border-radius: 6px;
-    border: 0.5px solid red;
+    text-align: center;
+    word-wrap: break-word;
+    color: red;
+    background-color: plum;
+    margin: 0px auto;
 }

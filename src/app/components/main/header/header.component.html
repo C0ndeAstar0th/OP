@@ -1,16 +1,18 @@
-<header class="header">
-    <mat-toolbar class="toolbar" style="background-color:indigo; color: white">
-        <span>
-        <strong> {{kind}}:</strong> {{infoUser.name}} {{infoUser.surname}}
-    </span>
-        <span class="demo-fill-remaining"></span>
-        <span>
-        <strong>Código:</strong> {{infoUser.username}}
-    </span>
-        <span class="demo-fill-remaining"></span>
-        <button mat-mini-fab color="primary" (click)="logout()"><mat-icon svgIcon="exit"></mat-icon></button>
+<div class="toolbar">
+    <table>
+        <tr>
+            <td style="text-align: right; vertical-align: bottom; width: 70px">
+                <strong> {{kind}}:</strong>
+            </td>
+            <td style="text-align: left; vertical-align: bottom; ">{{infoUser.name}} {{infoUser.surname}}</td>
+            <td rowspan="2" style="width: 40px;">
+                <button mat-mini-fab color="primary" (click)="logout()"><mat-icon svgIcon="exit"></mat-icon></button>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right; vertical-align: top; width: 70px"> <strong>Código:</strong> </td>
+            <td style="text-align: left; vertical-align: top;">{{infoUser.username}}</td>
+        </tr>
 
-        <!--<a class=" buttonX " md-raised-button (click)="logout() ">Cerrar sesión</a>
-        -->
-    </mat-toolbar>
-</header>
+    </table>
+</div>

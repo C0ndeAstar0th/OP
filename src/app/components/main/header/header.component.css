@@ -1,27 +1,24 @@
-                .grid-item {
-                    padding: 2px 2px 2px 2px;
-                    font-size: 15px;
-                    text-align: center;
-                    font-weight: bold;
-                }
-                
-                .demo-fill-remaining {
-                    /* This fills the remaining space, by using flexbox. 
-     Every toolbar row uses a flexbox row layout. */
-                    flex: 1 1 auto;
-                }
-                
-                .header {
-                    display: flex;
-                    align-items: center;
-                }
-                
-                button {
-                    color: #ffffff00;
-                    cursor: pointer;
-                }
-                
-                button:hover {
-                    background-color: rgb(46, 1, 78);
-                    cursor: pointer;
-                }
+ .toolbar {
+     background-color: indigo;
+     color: white;
+     font-size: 18px;
+     height: 55px;
+     width: 100%;
+ }
+ 
+ table {
+     padding: 5px 5px 5px 5px;
+     margin: 0;
+     border-spacing: 0;
+     width: 100%;
+ }
+ 
+ button {
+     color: #ffffff00;
+     cursor: pointer;
+ }
+ 
+ button:hover {
+     background-color: rgb(46, 1, 78);
+     cursor: pointer;
+ }

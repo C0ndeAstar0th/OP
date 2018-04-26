@@ -1,8 +1,19 @@
 .maindiv {
     display: flex;
-    justify-content: center;
     text-align: center;
     align-items: center;
+}
+
+mat-card {
+    text-align: center;
+}
+
+mat-option {
+    text-align: center;
+}
+
+a {
+    text-align: center;
 }
 
 .changeSelect {

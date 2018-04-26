@@ -6,7 +6,7 @@
         <h3>Por favor espere mientras se carga la información.</h3>
         <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     </div>
-    <mat-card *ngIf="data && flow != 3">
+    <mat-card *ngIf="data && flow != 3" style="text-align: center">
         <form [formGroup]="Form">
             <div>
                 <a>
@@ -61,10 +61,9 @@
                     </table>
                 </a>
             </div>
-            <div><a *ngIf="error" class="error">{{msgError}}</a></div>
+            <div *ngIf="error" class="error">{{msgError}}</div>
             <br>
-            <br>
-            <div><a class="buttonX" type="submit" (click)="addDataForm(Form.value)" Mat-raised-button>Continuar</a></div>
+            <div><a class="buttonX" type="submit" (click)="addDataForm(Form.value)" Mat-raised-button cdkFocusInitial>Continuar</a></div>
         </form>
     </mat-card>
 </div>

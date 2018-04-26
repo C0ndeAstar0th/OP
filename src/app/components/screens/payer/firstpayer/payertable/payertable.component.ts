@@ -14,7 +14,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 })
 export class PayertableComponent implements OnInit {
   public bodegas: any[];
-  public displayedColumns = ['id', 'user_id', 'done', 'payed', 'link'];
+  public displayedColumns: any[];
   public dataSource;
   public selectColumn;
 
@@ -22,7 +22,6 @@ export class PayertableComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   @Input() selected: number;
-  @Input() link: boolean;
 
   constructor(private _bs: BaseService,
               private router: Router,
@@ -33,69 +32,64 @@ export class PayertableComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.selected === 2 || this.selected === 3) {
+      this.displayedColumns = ['id', 'user_id', 'done', 'payed', 'link'];
+    } else {
+      this.displayedColumns = ['id', 'user_id', 'done', 'payed'];
+    }
     this.selection(this.selected);
-    setTimeout(() => {
-      this.dataSource = new MatTableDataSource(this.bodegas);
-    }, 500);
-  }
-
-  // tslint:disable-next-line:use-life-cycle-interface
-  public ngAfterViewInit() {
-    setTimeout(() => {
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-
-    }, 500);
-
   }
 
   public selection(numb: number) {
-    if (this.selected === 3) {
-      numb = 2;
-    }
-    this._bs.getStatus(numb).subscribe(
-      result => {
+    if (numb === 3) {
+      this._bs.getStatus(2)
+        .subscribe(result => {
+         if (result['payed'] === 'SI') {
+           this.bodegas = result;
+           this.makeArray();
+         } else {
+           this.bodegas = [0, 0 , 0 , 0 , 0];
+         }
+        }
+        );
+    } else {
+    this._bs.getStatus(numb)
+    .subscribe(result => {
         this.bodegas = result;
         this.makeArray();
-      });
+      }
+    );
+    }
   }
 
 
   public makeArray() {
 
     for (const entry of this.bodegas) {
-      if (this.selected  === 0) {
-        entry.done = 'Sin peritar';
-        entry.payed = 'NO';
-        entry.user_id = 'N/A';
-      } else {
+      if (this.selected  !== 0) {
         this._bs.getUsers(entry.user_id)
           .subscribe(r => {
             entry.user_id = r[0]['name'] + ' ' + r[0]['surname'];
-
-              if (this.selected === 1) {
-                entry.done = 'En proceso';
-                entry.payed = 'NO';
-              } else if (this.selected === 2) {
-               entry.done = 'Peritada';
-                entry.link = true;
-                entry.payed = 'NO';
-              } else if (this.selected === 3) {
-                entry.done = 'Peritada y Pagada';
-                entry.payed = 'SI';
-                entry.link = true;
               }
-            }
           );
       }
     }
+    this.printInfo();
+  }
+
+  public printInfo() {
+      this.dataSource = new MatTableDataSource(this.bodegas);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
   }
   public applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = filterValue;
   }
-
+  public rowClicked(row: any): void {
+    console.log(row);
+  }
 }
 
 

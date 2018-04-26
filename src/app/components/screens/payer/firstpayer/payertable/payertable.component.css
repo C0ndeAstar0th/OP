@@ -1,19 +1,16 @@
         .maindiv {
-            display: flex;
             justify-content: center;
             text-align: center;
             align-items: center;
-            width: 80%;
-            height: 90%;
-            padding-left: 10%;
-            padding-right: 10%;
+            align-self: center;
+            width: auto;
+            flex-direction: column;
+            display: flex;
         }
         
-        .table {
+        mat-table {
+            width: 700px;
             overflow: auto;
-            max-height: 500px;
-            padding-left: 20px;
-            padding-right: 20px;
         }
         
         .search {
@@ -27,18 +24,15 @@
         }
         
         .header {
-            display: flex;
             cursor: pointer;
             font-weight: bold;
             color: rgba(0, 0, 0, 0.37);
-            align-items: right;
         }
         
         mat-row {
-            padding: 0px 1px;
-            font-size: 50px;
             text-align: left;
-            height: 25px;
+            min-height: 36px;
+            cursor: pointer;
         }
         
         mat-row:nth-child(odd) {
@@ -49,8 +43,22 @@
             background-color: rgba(76, 0, 130, 0.555);
         }
         
-        container {
+        mat-cell:nth-child(4),
+        mat-header-cell:nth-child(4),
+        mat-cell:nth-child(5),
+        mat-header-cell:nth-child(5),
+        mat-cell:nth-child(3),
+        mat-header-cell:nth-child(3) {
+            flex: 0 0 80px;
+        }
+        
+        mat-cell:nth-child(1),
+        mat-header-cell:nth-child(1) {
+            flex: 0 0 100px;
+        }
+        
+        mat-header-cell {
             display: flex;
-            flex-direction: column;
-            min-width: 300px;
+            justify-content: center;
+            font-size: 13px;
         }

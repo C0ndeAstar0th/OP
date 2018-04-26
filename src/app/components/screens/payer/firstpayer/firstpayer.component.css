@@ -1,10 +1,5 @@
-.maindiv {
-    display: flex;
+.card {
+    border: 1px solid #e8e8e8;
+    align-content: center;
     justify-content: center;
-    text-align: center;
-    align-items: center;
-    width: 80%;
-    height: 90%;
-    padding-left: 10%;
-    padding-right: 10%;
 }

@@ -1,24 +1,25 @@
-<mat-card class="maindiv">
-    <mat-tab-group>
-        <mat-tab label="Sin Peritar">
-            <app-payertable [selected]="0" [link]="false">
+<mat-card class="card">
+    <mat-tab-group #tabGroup (selectedTabChange)="tabChanged($event)">
 
-            </app-payertable>
-        </mat-tab>
-        <mat-tab label="En Peritación">
-            <app-payertable [selected]="1" [link]="false">
-
-            </app-payertable>
-        </mat-tab>
         <mat-tab label="Peritadas sin pago">
-            <app-payertable [selected]="2" [link]="true">
-
+            <app-payertable [selected]="2">
             </app-payertable>
         </mat-tab>
+
         <mat-tab label="Peritadas y pagadas">
-            <app-payertable [selected]="3" [link]="true">
-
+            <app-payertable [selected]="3">
             </app-payertable>
         </mat-tab>
+
+        <mat-tab label="En Peritación">
+            <app-payertable [selected]="1">
+            </app-payertable>
+        </mat-tab>
+
+        <mat-tab label="Sin Peritar">
+            <app-payertable *ngIf="tab==3" [selected]="0">
+            </app-payertable>
+        </mat-tab>
+
     </mat-tab-group>
 </mat-card>

@@ -40,6 +40,8 @@ import { FinalbasicComponent } from './components/screens/basic/finalbasic/final
 import { FirstpayerComponent } from './components/screens/payer/firstpayer/firstpayer.component';
 import { PayertableComponent } from './components/screens/payer/firstpayer/payertable/payertable.component';
 import { TablesService } from './services/tables.service';
+import { AdminComponent } from './components/screens/admin/admin.component';
+import { AdmintableComponent } from './components/screens/admin/admintable/admintable.component';
 
 
 
@@ -57,7 +59,9 @@ import { TablesService } from './services/tables.service';
     DialogContent,
     DialogConfirm,
     FirstpayerComponent,
-    PayertableComponent
+    PayertableComponent,
+    AdminComponent,
+    AdmintableComponent
    ],
   imports: [
     BrowserModule,
